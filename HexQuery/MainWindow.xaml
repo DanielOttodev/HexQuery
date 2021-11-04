@@ -1,0 +1,24 @@
+﻿<Window x:Class="HexQuery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:HexQuery.ViewModels"
+        xmlns:views="clr-namespace:HexQuery.Views" d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
+        mc:Ignorable="d"
+ 
+        Title="HexQuery" Height="450" Width="800" WindowStyle="ThreeDBorderWindow">
+
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+                    <views:Login/>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:FileListViewModel}">
+                    <views:FileList/>
+                </DataTemplate>
+        </ContentControl.Resources>
+
+        </ContentControl>
+
+</Window>
